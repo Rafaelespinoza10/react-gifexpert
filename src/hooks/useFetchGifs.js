@@ -7,15 +7,15 @@ import { getImages } from '../helpers/getImages';
 
  const useFetchGifs = (category)=> {
     const[images, setimages] = useState([]);
-
+    const [isLoading, setisLoading] = useState(true);
 
     useEffect(()=>{
-        getImages(category,setimages);    
+        getImages(category,setimages,setisLoading);    
     },[]);
 
     return {
-        images:images,
-        isLoading:false,
+        images,
+        isLoading,
     }
 }
 
